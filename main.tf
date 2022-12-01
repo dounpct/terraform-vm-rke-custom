@@ -46,6 +46,9 @@ resource "vsphere_virtual_machine" "vm" {
   scsi_type        = data.vsphere_virtual_machine.template.scsi_type
   firmware         = data.vsphere_virtual_machine.template.firmware
 
+  cpu_hot_add_enabled = true
+  memory_hot_add_enabled = true
+  
   wait_for_guest_net_timeout = 60
   wait_for_guest_ip_timeout = 60 
 
