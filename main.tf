@@ -53,9 +53,7 @@ resource "vsphere_virtual_machine" "vm" {
   wait_for_guest_ip_timeout = 60 
 
   #extra config for diskEnableUUID for vsphere-kubernetes integration
-  extra_config = {
-      "disk.EnableUUID" = "TRUE"
-  }
+  enable_disk_uuid = true
 
   network_interface {
     network_id = data.vsphere_network.network.id
